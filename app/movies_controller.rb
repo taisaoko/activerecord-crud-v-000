@@ -25,15 +25,24 @@ def can_be_created_with_a_hash_of_attributes
   movie
 end
 
+<<<<<<< HEAD
 def can_be_created_in_a_block(title: "Home Alone", release_date: 1990) 
+=======
+def can_be_created_in_a_block(movie={title: "Home Alone", release_date: 1990}) 
+>>>>>>> d812659b8f96a018729c5df1b17eedc71aea51fe
   # Default values allows it to invoke with 0, 1 or 2 arguments 
   # If no arguments are passed, use default values:
   # title == "Home Alone"
   # release_date == 1990
   
   Movie.create do |m|
+<<<<<<< HEAD
     m.title = title
     m.release_date = release_date
+=======
+    m.title = movie[:title]
+    m.release_date = movie[:release_date]
+>>>>>>> d812659b8f96a018729c5df1b17eedc71aea51fe
   end
 end
 
@@ -71,9 +80,15 @@ end
 
 def can_be_found_updated_and_saved
   # Update the title "Awesome Flick" to "Even Awesomer Flick", save it, then return it
+<<<<<<< HEAD
   Movie.create(title: "Awesome Flick")
   movie = Movie.find_by(title: "Awesome Flick")
   movie.update(title: "Even Awesomer Flick")
+=======
+  movie = Movie.create(title: "Awesome Flick")
+  movie.update(title: "Even Awesomer Flick")
+  movie.save 
+>>>>>>> d812659b8f96a018729c5df1b17eedc71aea51fe
   movie
 end
 
